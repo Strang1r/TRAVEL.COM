@@ -38,7 +38,7 @@ const HotelListCard = ({ hotelImage, hotelTitle, hotelLocation, hotelDistance, r
           image={hotelImage}
         />
         <Link to={`/staysList/${encodeURIComponent(city)}/${id}`} target="_blank" rel="noopener noreferrer">
-          <img className="hotelImg" src={hotelImage} alt="" />
+          <img className="hotelImg" src={hotelImage} alt={type} />
         </Link>
       </div>
       <div className="hotelInfo">

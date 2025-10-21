@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface CollectState {
+export interface CollectState {
   plusOne: boolean;
 }
 

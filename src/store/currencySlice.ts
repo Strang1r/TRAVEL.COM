@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk, type PayloadAction } from '@reduxjs/tool
 
 export type CurrencyType = "USD" | "CNY" | "EUR";
 
-interface CurrencyState {
+export interface CurrencyState {
   current: CurrencyType;
   rates: Record<CurrencyType, number>;
   status: 'idle' | 'loading' | 'failed';

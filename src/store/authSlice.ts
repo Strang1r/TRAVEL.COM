@@ -6,7 +6,7 @@ interface User {
   email: string;
 }
 
-interface Authstate {
+export interface Authstate {
   user: User | null;
 }
 

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import Collect from "./Collect";
+/* import Collect from "./Collect"; */
 
 type journals = {
   image: string,
@@ -16,7 +16,7 @@ const JournalsCard = ({ image, title, user, like, time }: journals) => {
     <a href="#" className="item2-content" onClick={(e) => e.preventDefault()}>
       <div className="photo">
         <img src={image} alt="" className="img" />
-        <Collect />
+        {/* <Collect /> */}
       </div>
       <div className="info">
         <div className="textInfo">

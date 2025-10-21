@@ -1,5 +1,5 @@
 import "./Journals.scss";
-import Collect from './Collect';
+/* import Collect from './Collect'; */
 import JournalsCard from "./JournalsCard"
 import { useTranslation } from "react-i18next";
 
@@ -53,7 +53,7 @@ const Journals = () => {
       </div>
       <div className="content">
         <a href="#" className="item1" onClick={e => e.preventDefault()}>
-          <Collect />
+          {/* <Collect /> */}
           <img src="public/jou1.png" alt="" />
           <div className="item1-content">
             <h1 className="h1">{t("journals.Chasing the Northern Lights in Iceland")}</h1>

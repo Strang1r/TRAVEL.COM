@@ -4,6 +4,10 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "skipLibCheck": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": false
   },
   "include": [
     "src/**/*.ts",

@@ -1,4 +1,4 @@
-import axios from 'axios'
+/* import axios from 'axios'
 
 //根域名配置 超时时间
 const request = axios.create({
@@ -20,4 +20,4 @@ request.interceptors.response.use((response) => {
   return Promise.reject(error)
 })
 
-export { request }
+export { request } */
