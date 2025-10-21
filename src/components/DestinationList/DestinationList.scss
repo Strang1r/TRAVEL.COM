@@ -1,0 +1,255 @@
+.popularAttractions {
+  .attractionTitle {
+    margin: calc(44 / 1920 * 100vw) 0 calc(50 / 1920 * 100vw) 0;
+    font-size: calc(32 / 1920 * 100vw);
+    font-weight: 600;
+    color: #25191a;
+    letter-spacing: 1px;
+  }
+
+  .attractionList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: calc(28 / 1920 * 100vw);
+    width: 100%;
+    height: calc(630 / 1920 * 100vw);
+  }
+}
+
+.SearchMore {
+  margin-top: calc(120 / 1920 * 100vw);
+
+  .searchMoreTitle {
+    margin-bottom: calc(30 / 1920 * 100vw);
+    font-size: calc(32 / 1920 * 100vw);
+    font-weight: 600;
+    color: #25191a;
+    letter-spacing: calc(1 / 1920 * 100vw);
+  }
+
+  .searchMoreBar {
+    .bottomTitle {
+      position: relative;
+      position: sticky;
+      top: 0;
+      background-color: #fff;
+      z-index: 1;
+      height: calc(80 / 1920 * 100vw);
+      line-height: calc(80 / 1920 * 100vw);
+      border-bottom: #ddd solid 1px;
+
+      .tab {
+        display: inline-block;
+        color: #6d6b6b;
+        font-size: calc(18 / 1920 * 100vw);
+        font-weight: 600;
+        padding-right: calc(90 / 1920 * 100vw);
+
+        &:hover {
+          color: #25191a;
+        }
+      }
+
+      .active {
+        color: #25191a;
+      }
+
+      .bottomLine {
+        position: absolute;
+        bottom: 0;
+        height: calc(4 / 1920 * 100vw);
+        width: calc(42 / 1920 * 100vw);
+        background-color: #25191a;
+        border-radius: calc(2 / 1920 * 100vw);
+      }
+    }
+  }
+
+  .searchMoreList {
+    position: relative;
+    transition: height 0.4s ease;
+
+    .searchMoreListInner {
+      position: absolute; // 叠在一起
+      top: 0;
+      left: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: calc(28 / 1920 * 100vw);
+      width: 100%;
+      margin-top: calc(50 / 1920 * 100vw);
+      transition: transform 0.8s ease, opacity 0.1s ease;
+    }
+
+    .inactive {
+      transform: translateX(6%);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .active {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 2;
+    }
+  }
+}
+
+.recommendation {
+  margin-top: calc(120 / 1920 * 100vw);
+  padding-bottom: calc(66 / 1920 * 100vw);
+
+  .recommendationTitle {
+    margin-bottom: calc(50 / 1920 * 100vw);
+    font-size: calc(32 / 1920 * 100vw);
+    font-weight: 600;
+    color: #25191a;
+    letter-spacing: calc(1 / 1920 * 100vw);
+  }
+
+  .recommendationList {
+    height: calc(300 / 1920 * 100vw);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: calc(28 / 1920 * 100vw);
+    width: 100%;
+  }
+}
+
+.shadow {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 calc(100 / 1920 * 100vw) rgba(34, 30, 30, 0.15);
+}
+
+.attractionItem {
+  position: relative;
+  z-index: 2;
+  background-color: #ffffff;
+  border-radius: calc(28 / 1920 * 100vw);
+  overflow: hidden;
+  padding: calc(12 / 1920 * 100vw) calc(12 / 1920 * 100vw) 0 calc(12 / 1920 * 100vw);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  height: calc(290 / 1920 * 100vw);
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  .attractionImage {
+    position: relative;
+    height: calc(186 / 1920 * 100vw);
+    width: 100%;
+    background-color: #e8e8e8;
+    border-radius: calc(24 / 1920 * 100vw);
+    overflow: hidden;
+
+    .collect {
+      position: absolute;
+      right: calc(20 / 1920 * 100vw);
+      top: calc(20 / 1920 * 100vw);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+
+      &.active {
+        transform: scale(0.8);
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .imageOverlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: calc(66 / 1920 * 100vw);
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+      z-index: 1;
+    }
+
+    h5 {
+      position: absolute;
+      bottom: calc(14 / 1920 * 100vw);
+      right: calc(14 / 1920 * 100vw);
+      font-size: calc(14 / 1920 * 100vw);
+      color: #ffffff;
+      font-weight: 400;
+      z-index: 2;
+      opacity: 0.9;
+
+      &::before {
+        content: '\e605';
+        font-family: "iconfont";
+        font-size: calc(15 / 1920 * 100vw);
+        padding-right: calc(8 / 1920 * 100vw);
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .attractionName {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: calc(21 / 1920 * 100vw);
+    color: #25191a;
+    padding: 0 calc(12 / 1920 * 100vw) 0 calc(16 / 1920 * 100vw);
+
+    h3 {
+      flex: 1;
+      font-size: calc(20 / 1920 * 100vw);
+      letter-spacing: calc(0.6 / 1920 * 100vw);
+    }
+
+    h5 {
+      display: flex;
+      align-items: center;
+      font-size: calc(16 / 1920 * 100vw);
+      font-weight: 500;
+
+      &::before {
+        content: '\e6ef';
+        font-family: "iconfont";
+        font-size: calc(14 / 1920 * 100vw);
+        padding-right: calc(4 / 1920 * 100vw);
+      }
+    }
+  }
+
+  .icon-row {
+    display: flex;
+    padding: calc(14 / 1920 * 100vw) 0 0 calc(16 / 1920 * 100vw);
+    align-items: center;
+
+    i {
+      font-size: calc(16 / 1920 * 100vw);
+      color: #aaaaaa;
+      margin-right: calc(10 / 1920 * 100vw);
+    }
+
+    .icon-gongjiaoche {
+      font-size: calc(15 / 1920 * 100vw);
+    }
+
+    .icon-ditiexiao {
+      font-size: calc(14 / 1920 * 100vw);
+    }
+
+    .icon-group {
+      font-size: calc(18 / 1920 * 100vw);
+    }
+  }
+}

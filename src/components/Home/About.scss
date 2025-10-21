@@ -1,0 +1,125 @@
+/* $baseSize: 19.2vw; */
+
+.about {
+  position: absolute;
+  bottom: 0;
+  height: calc(620 / 1920 * 100vw);
+  width: 100%;
+  background: #f7f7f7;
+  border-radius: calc(28 / 1920 * 100vw) calc(28 / 1920 * 100vw) 0 0;
+
+  .main {
+    max-width: calc(1366 / 1920 * 100vw);
+    margin: 0 auto;
+
+    .homeLogo {
+      display: flex;
+      align-items: center;
+      width: calc(200 / 1920 * 100vw);
+      height: 100%;
+      margin-top: calc(66 / 1920 * 100vw);
+      cursor: pointer;
+
+      img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .abody {
+      display: flex;
+      justify-content: flex-start;
+      gap: calc(200 / 1920 * 100vw);
+      margin-bottom: calc(30 / 1920 * 100vw);
+
+      .item1 {
+        margin: 0;
+      }
+
+      .item1 {
+        .aboutUs {
+          font-size: calc(18 / 1920 * 100vw);
+          font-weight: 600;
+          color: #333;
+          margin: calc(54 / 1920 * 100vw) 0 calc(40 / 1920 * 100vw) 0;
+        }
+
+        a {
+          display: block;
+          font-size: calc(15 / 1920 * 100vw);
+          color: #666;
+          margin-bottom: calc(22 / 1920 * 100vw);
+        }
+
+        a:hover {
+          color: #25191a;
+          text-decoration: underline;
+        }
+
+      }
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      border-top: #e5e5e5 solid 1px;
+
+      div {
+        margin: 0;
+        margin-top: calc(30 / 1920 * 100vw);
+        font-size: calc(14 / 1920 * 100vw);
+        color: #aaa;
+      }
+
+      .icon11,
+      .icon12,
+      .icon13,
+      .icon14 {
+        display: inline-block;
+        width: calc(20 / 1920 * 100vw);
+        height: calc(20 / 1920 * 100vw);
+        padding-left: calc(30 / 1920 * 100vw);
+      }
+
+      .icon11 {
+        width: calc(22 / 1920 * 100vw);
+        height: calc(22 / 1920 * 100vw);
+        fill: #25191a;
+
+        :hover {
+          fill: #FF0000;
+        }
+      }
+
+      .icon12 {
+
+        fill: #25191a;
+
+        :hover {
+          fill: #0073e6;
+        }
+      }
+
+      .icon13 {
+        fill: #25191a;
+
+        :hover {
+          fill: #6f6f6f;
+        }
+      }
+
+      .icon14 {
+        width: calc(22 / 1920 * 100vw);
+        height: calc(22 / 1920 * 100vw);
+        fill: #25191a;
+
+        :hover {
+          fill: #f8536a;
+        }
+      }
+    }
+  }
+}

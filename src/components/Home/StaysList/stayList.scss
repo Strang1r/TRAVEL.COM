@@ -1,0 +1,21 @@
+.stayList {
+  height: 100%;
+}
+
+.stayListSearch {
+  margin: 0 auto;
+  max-width: calc(1366 / 1920 * 100vw);
+}
+
+a {
+  text-decoration: none;
+}
+
+.line1 {
+  border-bottom: #e4dcdd solid 1px;
+}
+
+.stayListfooter {
+  position: relative;
+  margin-top: calc(700 / 1920 * 100vw);
+}

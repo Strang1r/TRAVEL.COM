@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "roboto", "Helvetica", sans-serif;
+}
+
+.stayDetails {
+
+  height: 100%;
+}
+
+.stayDetailsSearch {
+  margin: 0 auto;
+  max-width: calc(1366 / 1920 * 100vw);
+}
+
+.stayDetailsBody {
+  height: 500px;
+}
+
+.main4 {
+  margin: 0 auto;
+  max-width: calc(1366 / 1920 * 100vw);
+}
+
+a {
+  text-decoration: none;
+}
+
+.line3 {
+  border-bottom: #e4dcdd solid 1px;
+}
+
+
+.stayDetailsfooter {
+  position: relative;
+  margin-top: calc(700 / 1920 * 100vw);
+}

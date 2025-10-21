@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "roboto", "Helvetica", sans-serif;
+}
+
+@font-face {
+  font-family: 'iconfont';
+  /* Project id 5013390 */
+  src: url('http://at.alicdn.com/t/c/font_5013390_oe02ozhtbsi.woff2?t=1760475377011')format('woff2'),
+    url('http://at.alicdn.com/t/c/font_5013390_oe02ozhtbsi.woff?t=1760475377011')format('woff'),
+    url('http://at.alicdn.com/t/c/font_5013390_oe02ozhtbsi.ttf?t=1760475377011')format('truetype');
+}
+
+.App {
+  max-width: calc(1366 / 1920 * 100vw);
+  margin: 0 auto;
+  padding-bottom: calc(700 / 1920 * 100vw);
+  height: 100%;
+  background-color: #fff;
+  font-family: "roboto", "Helvetica", sans-serif;
+}
+
+.footer {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin: 0;
+  }
+}

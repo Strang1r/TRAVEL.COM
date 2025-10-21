@@ -1,0 +1,778 @@
+.stayDetailsBottom {
+  margin-top: calc(36 / 1920 * 100vw);
+
+  .bottomTitle {
+    position: relative;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1;
+    height: calc(88/ 1920 * 100vw);
+    line-height: calc(88/ 1920 * 100vw);
+    border-bottom: #ddd solid 1px;
+
+    .tab {
+      display: inline-block;
+      color: #6d6b6b;
+      font-size: calc(20 / 1920 * 100vw);
+      font-weight: 600;
+      padding-right: calc(90 / 1920 * 100vw);
+
+      &:hover {
+        color: #25191a;
+      }
+    }
+
+    .Overview::before {
+      content: '\e622';
+      font-family: "iconfont";
+      vertical-align: top;
+      font-size: calc(16 / 1920 * 100vw);
+      padding-right: calc(13 / 1920 * 100vw);
+    }
+
+    .Rooms::before {
+      content: '\e6a7';
+      font-family: "iconfont";
+      vertical-align: top;
+      font-size: calc(22 / 1920 * 100vw);
+      padding-right: calc(13 / 1920 * 100vw);
+    }
+
+    .Reviews::before {
+      content: '\e605';
+      font-family: "iconfont";
+      font-size: calc(22 / 1920 * 100vw);
+      padding-right: calc(13 / 1920 * 100vw);
+    }
+
+    .Policies::before {
+      content: '\e600';
+      font-family: "iconfont";
+      font-size: calc(20 / 1920 * 100vw);
+      padding-right: calc(13 / 1920 * 100vw);
+
+    }
+
+    .active {
+      color: #25191a;
+    }
+
+    .bottomLine {
+      position: absolute;
+      bottom: 0;
+      height: calc(4 / 1920 * 100vw);
+      width: calc(42 / 1920 * 100vw);
+      background-color: #25191a;
+      border-radius: calc(2 / 1920 * 100vw);
+    }
+  }
+
+  .overview {
+    display: flex;
+    justify-content: space-between;
+    height: calc(400 / 1920 * 100vw);
+    margin-top: calc(44 / 1920 * 100vw);
+    gap: calc(50 / 1920 * 100vw);
+    border-bottom: #ddd solid 1px;
+
+    .property {
+      flex: 0 0 calc(1014/ 1920 * 100vw);
+
+      h4 {
+        font-size: calc(18 / 1920 * 100vw);
+        color: #25191a;
+        margin-bottom: calc(30 / 1920 * 100vw);
+      }
+
+      p {
+        font-size: calc(16 / 1920 * 100vw);
+        color: #656262;
+        line-height: 2;
+      }
+
+    }
+
+    .propertyMap {
+      flex: 1;
+
+      .map {
+        width: 100%;
+        height: calc(200 / 1920 * 100vw);
+        border-radius: calc(20 / 1920 * 100vw);
+        border: #e5e5e5 1px solid;
+        overflow: hidden;
+
+        .mapArea {
+          height: calc(150 / 1920 * 100vw);
+          background-color: #ededed;
+        }
+
+        .viewMap {
+          height: calc(50 / 1920 * 100vw);
+          line-height: calc(50 / 1920 * 100vw);
+          text-align: center;
+
+          a {
+            color: #246eed;
+            font-size: calc(16 / 1920 * 100vw);
+
+            &:hover {
+              color: #f8536a;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  .rooms {
+    margin-top: calc(44 / 1920 * 100vw);
+    padding-bottom: calc(50 / 1920 * 100vw);
+    border-bottom: #ddd solid 1px;
+
+    h4 {
+      font-size: calc(18 / 1920 * 100vw);
+      color: #25191a;
+      margin-bottom: calc(50 / 1920 * 100vw);
+    }
+
+    .roomDetails {
+      display: flex;
+      height: calc(183 / 1920 * 100vw);
+      gap: calc(20 / 1920 * 100vw);
+      margin-bottom: calc(20 / 1920 * 100vw);
+
+      .roomImg {
+        flex: 0 0 calc(298 / 1920 * 100vw);
+        background-color: #e5e5e5;
+        border-radius: calc(16 / 1920 * 100vw);
+        overflow: hidden;
+        cursor: pointer;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+        }
+
+        &:hover img {
+          transform: scale(1.06);
+        }
+      }
+
+      .roomPrice {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        border: #bbb solid 1px;
+        border-radius: calc(16 / 1920 * 100vw);
+        padding: calc(26 / 1920 * 100vw) calc(32 / 1920 * 100vw) calc(20 / 1920 * 100vw) calc(32 / 1920 * 100vw);
+
+        .roomPriceBoxLeft {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .roomPriceBoxLeftTop {
+            .roomName {
+              font-size: calc(18 / 1920 * 100vw);
+              color: #25191a;
+              margin-bottom: calc(15 / 1920 * 100vw);
+              cursor: pointer;
+            }
+
+            .roomInfo {
+              p {
+                display: inline-block;
+                font-size: calc(16 / 1920 * 100vw);
+                color: #342f2f;
+                margin: 0 calc(28 / 1920 * 100vw) calc(8 / 1920 * 100vw) 0;
+              }
+
+              .bed::before {
+                content: '\e97e';
+                font-family: 'iconfont';
+                margin-right: calc(6 / 1920 * 100vw);
+                font-size: calc(16 / 1920 * 100vw);
+                color: #342f2f;
+              }
+
+              .roomSize::before {
+                content: '\e602';
+                font-family: 'iconfont';
+                margin-right: calc(6 / 1920 * 100vw);
+                font-size: calc(17 / 1920 * 100vw);
+                color: #342f2f;
+              }
+
+              .windows::before {
+                content: '\e643';
+                font-family: 'iconfont';
+                margin-right: calc(6 / 1920 * 100vw);
+                font-size: calc(16 / 1920 * 100vw);
+                color: #342f2f;
+              }
+
+            }
+
+            .roomFacilities {
+              p {
+                display: inline-block;
+                font-size: calc(14 / 1920 * 100vw);
+                color: #656262;
+                margin-right: calc(28 / 1920 * 100vw);
+              }
+
+              .roomWifi::before {
+                content: '\e691';
+                font-family: 'iconfont';
+                margin-right: calc(6 / 1920 * 100vw);
+                font-size: calc(16 / 1920 * 100vw);
+                color: #656262;
+              }
+
+              .airConditioning::before {
+                content: '\e65f';
+                font-family: 'iconfont';
+                vertical-align: top;
+                margin-right: calc(6 / 1920 * 100vw);
+                font-size: calc(16 / 1920 * 100vw);
+                color: #656262;
+              }
+
+              .bathroom::before {
+                content: '\e6b1';
+                font-family: 'iconfont';
+                margin-right: calc(6 / 1920 * 100vw);
+                font-size: calc(16 / 1920 * 100vw);
+                color: #656262;
+              }
+
+              .noSmoking::before {
+                content: '\e6c6';
+                font-family: 'iconfont';
+                margin-right: calc(6 / 1920 * 100vw);
+                font-size: calc(16 / 1920 * 100vw);
+                color: #656262;
+              }
+            }
+
+          }
+
+          .roomPriceBoxLeftBottom {
+            p {
+              display: inline-block;
+              font-size: calc(14 / 1920 * 100vw);
+              font-weight: 600;
+              margin-right: calc(28 / 1920 * 100vw);
+              color: #9d5500;
+
+              &::before {
+                content: "\e606";
+                font-family: 'iconfont';
+                font-size: calc(20 / 1920 * 100vw);
+                vertical-align: middle;
+                margin-right: calc(4 / 1920 * 100vw);
+                color: #9d5500;
+              }
+            }
+          }
+        }
+
+        .roomPriceBoxRight {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+
+          .bookPrice {
+            text-align: right;
+            margin-bottom: calc(12 / 1920 * 100vw);
+
+            .p4,
+            .p5 {
+              font-size: calc(14 / 1920 * 100vw);
+              margin-top: calc(4 / 1920 * 100vw);
+            }
+
+            .p3 {
+              font-size: calc(26 / 1920 * 100vw);
+              font-weight: 600;
+              color: #25191a;
+            }
+
+            .p4 {
+              color: #655e5f;
+            }
+
+            .p5 {
+              color: #9d5500;
+            }
+          }
+
+          .bookNow {
+            height: calc(40 / 1920 * 100vw);
+            line-height: calc(40 / 1920 * 100vw);
+            text-align: center;
+            width: calc(204 / 1920 * 100vw);
+            padding-left: calc(8 / 1920 * 100vw);
+            background-color: #251618;
+            border: 0;
+            border-radius: calc(20 / 1920 * 100vw);
+            color: #fff;
+            font-size: calc(16 / 1920 * 100vw);
+            font-weight: 600;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #322022;
+            }
+
+            &::after {
+              content: '\e629';
+              font-family: 'iconfont';
+              display: inline-block;
+              vertical-align: middle;
+              color: #fff;
+              font-size: calc(14 / 1920 * 100vw);
+              margin-left: calc(5 / 1920 * 100vw);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .reviews {
+    margin-top: calc(44 / 1920 * 100vw);
+
+    h4 {
+      font-size: calc(18 / 1920 * 100vw);
+      color: #25191a;
+      margin-bottom: calc(50 / 1920 * 100vw);
+    }
+
+    .reviewItem {
+      border-bottom: #ddd solid 1px;
+
+      .reviewRating {
+        display: flex;
+        justify-content: space-between;
+        height: calc(110 / 1920 * 100vw);
+        margin-bottom: calc(60 / 1920 * 100vw);
+
+        .ratingValue {
+          flex: 0 0 calc(400 / 1920 * 100vw);
+          margin-top: calc(16 / 1920 * 100vw);
+
+          .hotelRating {
+            display: flex;
+
+            .ratingDetails {
+
+              .p1 {
+                font-size: calc(18 / 1920 * 100vw);
+                font-weight: 600;
+                color: #25191a;
+                margin-bottom: calc(5 / 1920 * 100vw);
+              }
+
+              .p2 {
+                font-size: calc(16 / 1920 * 100vw);
+                color: #655e5f;
+              }
+            }
+
+            .ratingValue {
+              flex: 0 0 calc(50 / 1920 * 100vw);
+              background-color: #c25766;
+              height: calc(50 / 1920 * 100vw);
+              width: calc(50 / 1920 * 100vw);
+              line-height: calc(50 / 1920 * 100vw);
+              text-align: center;
+              color: #fff;
+              font-size: calc(18 / 1920 * 100vw);
+              font-weight: 600;
+              border-radius: 50% calc(8 / 1920 * 100vw) 50% 50%;
+              margin: 0 calc(16 / 1920 * 100vw) 0 0;
+            }
+          }
+        }
+
+        .ratingStars {
+          flex: 1;
+          display: flex;
+          justify-content: flex-end;
+          flex-wrap: wrap;
+          margin-top: calc(10 / 1920 * 100vw);
+
+          .ratingBar {
+            width: calc(430 / 1920 * 100vw);
+
+            &:nth-child(even) {
+              margin-left: calc(60 / 1920 * 100vw);
+            }
+
+            .ratingBarTop {
+              display: flex;
+              justify-content: space-between;
+
+              span,
+              p {
+                font-size: calc(14 / 1920 * 100vw);
+                color: #342f2f;
+                font-weight: 600;
+              }
+            }
+
+            .ratingBarBottomOut {
+              height: calc(8 / 1920 * 100vw);
+              background-color: #e5e1e2;
+              border-radius: calc(4 / 1920 * 100vw);
+              margin-top: calc(8 / 1920 * 100vw);
+
+              .ratingBarBottomIn {
+                height: calc(8 / 1920 * 100vw);
+                width: 90%;
+                background-color: #c25766;
+                border-radius: calc(4 / 1920 * 100vw);
+              }
+            }
+          }
+        }
+      }
+
+      .reviewContent {
+        display: flex;
+        flex-wrap: wrap;
+
+        .review1 {
+          height: calc(200 / 1920 * 100vw);
+          width: calc(580 / 1920 * 100vw);
+          margin: 0 calc(100 / 1920 * 100vw) calc(40 / 1920 * 100vw) 0;
+
+          .userInfo {
+            display: flex;
+
+            .headImg {
+              height: calc(50 / 1920 * 100vw);
+              width: calc(50 / 1920 * 100vw);
+              background-color: #655e5f;
+              border-radius: 50%;
+              margin-right: calc(14 / 1920 * 100vw);
+              overflow: hidden;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+
+            .username {
+              p {
+                font-size: calc(16 / 1920 * 100vw);
+                color: #25191a;
+                margin: calc(6 / 1920 * 100vw) 0 calc(2 / 1920 * 100vw) 0;
+                font-weight: 600;
+              }
+
+              span {
+                font-size: calc(14 / 1920 * 100vw);
+                color: #25191a;
+              }
+            }
+          }
+
+          .reviewText {
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: calc(16 / 1920 * 100vw);
+            color: #342f2f;
+            margin: calc(12 / 1920 * 100vw) 0 0 calc(64 / 1920 * 100vw);
+            line-height: 1.6;
+          }
+
+          .reviewDate {
+            font-size: calc(14 / 1920 * 100vw);
+            color: #655e5f;
+            margin: calc(12 / 1920 * 100vw) 0 0 calc(64 / 1920 * 100vw);
+          }
+        }
+      }
+
+      .showAllReviews {
+        margin: calc(10 / 1920 * 100vw) 0 calc(76 / 1920 * 100vw) 0;
+        background-color: #eeeeee;
+        width: calc(200 / 1920 * 100vw);
+        height: calc(46 / 1920 * 100vw);
+        border-radius: calc(23 / 1920 * 100vw);
+        line-height: calc(46 / 1920 * 100vw);
+        text-align: center;
+        font-size: calc(16 / 1920 * 100vw);
+        color: #342f2f;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .policies {
+    margin-top: calc(44 / 1920 * 100vw);
+    padding-bottom: calc(44 / 1920 * 100vw);
+    border-bottom: #ddd solid 1px;
+
+    h4 {
+      font-size: calc(18 / 1920 * 100vw);
+      color: #25191a;
+      margin-bottom: calc(40 / 1920 * 100vw);
+    }
+
+    .policyList {
+      display: flex;
+      height: calc(78 / 1920 * 100vw);
+      line-height: calc(78 / 1920 * 100vw);
+
+      &:last-child .policyContent {
+        border: none;
+      }
+
+      .policyTitle {
+        width: calc(300 / 1920 * 100vw);
+
+        h3 {
+          font-size: calc(16 / 1920 * 100vw);
+          font-weight: 600;
+          color: #342f2f;
+        }
+
+        .Cancellation::before {
+          content: '\e639';
+          font-family: "iconfont";
+          font-size: calc(20 / 1920 * 100vw);
+          padding-right: calc(8 / 1920 * 100vw);
+        }
+
+        .Children::before {
+          content: '\e8af';
+          font-family: "iconfont";
+          font-size: calc(20 / 1920 * 100vw);
+          padding-right: calc(8 / 1920 * 100vw);
+        }
+
+        .Pets::before {
+          content: '\e60a';
+          font-family: "iconfont";
+          font-size: calc(16 / 1920 * 100vw);
+          padding-right: calc(8 / 1920 * 100vw);
+        }
+
+        .Groups::before {
+          content: '\e753';
+          font-family: "iconfont";
+          font-size: calc(20 / 1920 * 100vw);
+          padding-right: calc(8 / 1920 * 100vw);
+        }
+      }
+
+      .policyContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: calc(78 / 1920 * 100vw);
+        width: calc(1000 / 1920 * 100vw);
+        border-bottom: #ddd solid 1px;
+
+
+        p {
+          font-size: calc(16 / 1920 * 100vw);
+          line-height: 1.5;
+          color: #655e5f;
+        }
+      }
+    }
+  }
+
+  .recommendation {
+    position: relative;
+    margin-top: calc(44 / 1920 * 100vw);
+    padding-bottom: calc(44 / 1920 * 100vw);
+
+    h4 {
+      font-size: calc(18 / 1920 * 100vw);
+      color: #25191a;
+      margin-bottom: calc(60 / 1920 * 100vw);
+    }
+
+    .leftArrow,
+    .rightArrow {
+      position: absolute;
+      top: 40%;
+      z-index: 1;
+      opacity: 0.95;
+      cursor: pointer;
+      width: calc(34 / 1920 * 100vw);
+      height: calc(34 / 1920 * 100vw);
+      border-radius: 50%;
+      border: 0;
+      background-color: #fff;
+      box-shadow: 0 0 calc(12 / 1920 * 100vw) rgba($color: #25191a, $alpha: 0.3);
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .rightArrow::before {
+      content: '\e686';
+      font-family: "iconfont";
+      font-size: calc(14 / 1920 * 100vw);
+      color: #25191a;
+      display: inline-block;
+      transform: rotate(180deg);
+    }
+
+    .leftArrow::before {
+      content: '\e686';
+      font-family: "iconfont";
+      font-size: calc(14 / 1920 * 100vw);
+      color: #25191a;
+    }
+
+    .leftArrow {
+      left: 0;
+      transform: translateX(-50%);
+    }
+
+    .rightArrow {
+      right: 0;
+      transform: translateX(50%);
+    }
+
+    .content1 {
+      display: flex;
+      gap: calc(28 / 1920 * 100vw);
+      flex-wrap: nowrap;
+      margin-top: calc(36 / 1920 * 100vw);
+      overflow-x: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .item1 {
+        flex: 0 0 25%;
+        background-color: #ffffff;
+        height: calc(410 / 1920 * 100vw);
+        max-width: calc(300 / 1920 * 100vw);
+
+        .image1 {
+          position: relative;
+          height: calc(242 / 1920 * 100vw);
+          width: 100%;
+          background-color: rgb(255, 255, 255);
+          border-radius: calc(14 / 1920 * 100vw);
+          overflow: hidden;
+
+          .collect1 {
+            position: absolute;
+            right: calc(20 / 1920 * 100vw);
+            top: calc(20 / 1920 * 100vw);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+
+            &.active {
+              transform: scale(0.85);
+            }
+          }
+
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .info1 {
+          .name1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: calc(20 / 1920 * 100vw);
+            color: #25191a;
+
+            h3 {
+              flex: 1;
+              font-size: calc(18 / 1920 * 100vw);
+              letter-spacing: calc(0.8 / 1920 * 100vw);
+            }
+
+            h5 {
+              font-size: calc(16 / 1920 * 100vw);
+              font-weight: 500;
+
+              &::before {
+                content: '\e6ef';
+                font-family: "iconfont";
+                font-size: calc(14 / 1920 * 100vw);
+                vertical-align: baseline;
+                padding-right: calc(2 / 1920 * 100vw);
+              }
+            }
+          }
+
+          p {
+            font-size: calc(16 / 1920 * 100vw);
+            color: #777;
+            margin-bottom: calc(7 / 1920 * 100vw);
+          }
+
+          .distance1 {
+            margin-top: calc(10 / 1920 * 100vw);
+
+            &::before {
+              content: '\e601';
+              font-family: "iconfont";
+              font-size: calc(16 / 1920 * 100vw);
+              color: #25191a;
+              vertical-align: baseline;
+              padding-right: calc(4 / 1920 * 100vw);
+            }
+          }
+
+          .type1::before {
+            content: '\e690';
+            font-family: "iconfont";
+            font-size: calc(18 / 1920 * 100vw);
+            color: #25191a;
+            vertical-align: baseline;
+            padding-right: calc(3 / 1920 * 100vw);
+          }
+
+          .reviews1 {
+            color: #444;
+
+            &::before {
+              content: '\e7d3';
+              font-family: "iconfont";
+              font-size: calc(16 / 1920 * 100vw);
+              vertical-align: baseline;
+              padding-right: calc(8 / 1920 * 100vw);
+            }
+          }
+
+          .price22 {
+            font-size: calc(14 / 1920 * 100vw);
+            color: #25191a;
+          }
+        }
+      }
+    }
+  }
+}

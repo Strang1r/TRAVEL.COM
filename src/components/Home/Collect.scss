@@ -1,0 +1,58 @@
+.collect {
+  position: absolute;
+  z-index: 2;
+  width: calc(32 / 1920 * 100vw);
+  height: calc(32 / 1920 * 100vw);
+  right: calc(20 / 1920 * 100vw);
+  top: calc(20 / 1920 * 100vw);
+  cursor: pointer;
+
+
+  &.active img {
+    transform: scale(0.85);
+    pointer-events: none;
+  }
+
+  &:not(.active):hover img {
+    transform: scale(1.1);
+  }
+
+  img {
+    opacity: 0.9;
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 calc(6 / 1920 * 100vw) rgba(34, 30, 30, 0.2));
+    transition: transform 0.2s ease;
+  }
+}
+
+.collectStay {
+  position: absolute;
+  z-index: 2;
+  width: calc(32 / 1920 * 100vw);
+  height: calc(32 / 1920 * 100vw);
+  right: calc(20 / 1920 * 100vw);
+  top: calc(20 / 1920 * 100vw);
+  cursor: pointer;
+
+  &.active img {
+    transform: scale(0.85);
+    pointer-events: none;
+  }
+
+  &:not(.active):hover img {
+    transform: scale(1.1);
+  }
+
+  img {
+    opacity: 0.9;
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 calc(6 / 1920 * 100vw) rgba(34, 30, 30, 0.2));
+    transition: transform 0.2s ease;
+  }
+}

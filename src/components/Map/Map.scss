@@ -1,0 +1,755 @@
+.leaflet-control-zoom {
+  display: none !important; // 隐藏默认的缩放控件
+}
+
+.mapLine {
+  position: fixed;
+  top: calc(90 / 1920 * 100vw);
+  left: 0;
+  width: 100%;
+  height: calc(1 / 1920 * 100vw);
+  background-color: #e4dcdd;
+  z-index: 990;
+}
+
+.MapPage {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+}
+
+.mapContainer>div:first-child {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: #fff;
+}
+
+.mapContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  max-width: 100%;
+  padding: 0 calc(60 / 1920 * 100vw);
+
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  /* IE 10+ */
+  scrollbar-width: thin;
+
+  .top {
+    width: calc(1788 / 1920 * 100vw);
+    margin-left: -15.4%;
+  }
+}
+
+.MapBody {
+  display: flex;
+  flex: 1;
+  transition: all 0.4s ease;
+  max-height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+  margin-top: calc(91 / 1920 * 100vw);
+
+  .mapList {
+    flex: 0 0 48.2%;
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    margin-right: calc(0 / 1920 * 100vw);
+    height: 100%;
+
+
+    &.fullScreen {
+      display: none;
+    }
+
+    .mapListTitle {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      line-height: calc(70 / 1920 * 100vw);
+      color: #25191a;
+      margin: calc(20 / 1920 * 100vw) 0;
+      font-size: calc(20 / 1920 * 100vw);
+
+      .sortSelect {
+        box-sizing: border-box;
+        height: calc(50 / 1920 * 100vw);
+        width: auto;
+        border-radius: calc(28 / 1920 * 100vw);
+        line-height: calc(50 / 1920 * 100vw);
+        font-size: calc(16 / 1920 * 100vw);
+        padding-left: calc(34 / 1920 * 100vw);
+        padding-right: calc(30 / 1920 * 100vw);
+        color: #25191a;
+        font-weight: 500;
+        border: #aaa 1px solid;
+        cursor: pointer;
+        z-index: 1;
+
+        &:hover {
+          border: #b83b4c 1px solid;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &.active {
+          border: #b83b4c 1px solid;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &::after {
+          content: '\e629';
+          font-family: 'iconfont';
+          transform: rotate(90deg);
+          display: inline-block;
+          vertical-align: middle;
+          color: #25191a;
+          font-size: calc(16 / 1920 * 100vw);
+          font-weight: 600;
+          margin-left: calc(12 / 1920 * 100vw);
+        }
+
+        &:hover::after {
+          color: #b83b4c;
+          transition: transform 0.3s ease;
+        }
+
+        &.active::after {
+          transform: rotate(-90deg);
+          transition: transform 0.3s ease-in-out;
+          color: #b83b4c;
+        }
+      }
+
+      .dropdownMenu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin-top: calc(4 / 1920 * 100vw);
+        background-color: #ffffff;
+        min-width: calc(240 / 1920 * 100vw);
+        max-height: calc(300 / 1920 * 100vw);
+        overflow-y: auto;
+        box-shadow: 0 0 calc(16 / 1920 * 100vw) rgba(34, 30, 30, 0.10);
+        border-radius: calc(22 / 1920 * 100vw);
+        padding: calc(12 / 1920 * 100vw);
+
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        opacity: 0;
+        visibility: hidden;
+
+        &.show {
+          transform: scaleY(1);
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .dropdownItem {
+          height: calc(60 / 1920 * 100vw);
+          line-height: calc(60 / 1920 * 100vw);
+          padding-left: calc(20 / 1920 * 100vw);
+          font-size: calc(16 / 1920 * 100vw);
+          border-radius: calc(16 / 1920 * 100vw);
+          color: #25191a;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #f4f2f2;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+
+    .mapListContent {
+      flex: 1;
+      min-height: 0;
+
+      .listItem {
+        display: flex;
+        width: 100%;
+        height: calc(224 / 1920 * 100vw);
+        border-radius: calc(28 / 1920 * 100vw);
+        border: #ddd 1px solid;
+        overflow: hidden;
+        margin-bottom: calc(30 / 1920 * 100vw);
+        cursor: pointer;
+        transition: all 0.4s ease;
+
+        &:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 calc(5 / 1920 * 100vw) calc(10 / 1920 * 100vw) rgba(34, 30, 30, 0.1);
+        }
+
+        .hotelImage {
+          position: relative;
+          flex: 0 0 calc(224 / 1920 * 100vw);
+          border-radius: calc(28 / 1920 * 100vw);
+          background-color: #fff;
+          overflow: hidden;
+          cursor: pointer;
+
+          .hotelImg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+          }
+        }
+
+        .hotelInfo {
+          flex: 1;
+          display: flex;
+          justify-content: space-between;
+
+          .hotelLeft {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            padding: calc(22 / 1920 * 100vw) 0 calc(20 / 1920 * 100vw) calc(28 / 1920 * 100vw);
+
+            .hotelDetails {
+
+              .hotelTitleContainer {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                width: 114%;
+                margin-bottom: calc(11 / 1920 * 100vw);
+
+                .hotelTitle {
+                  vertical-align: middle;
+                  font-size: calc(22 / 1920 * 100vw);
+                  margin-right: calc(8 / 1920 * 100vw);
+                  font-weight: 600;
+                  color: #25191a;
+                  cursor: pointer;
+                }
+
+                span {
+                  display: inline-block;
+                  font-size: calc(16 / 1920 * 100vw);
+                  color: #f2ac0a;
+                  margin-left: calc(2 / 1920 * 100vw);
+                }
+              }
+
+              .showMap,
+              .hotelLocation {
+                font-size: calc(16 / 1920 * 100vw);
+                display: inline;
+                color: #25191a;
+              }
+
+              .showMap {
+                margin-left: calc(14 / 1920 * 100vw);
+                color: #b83b4c;
+                display: none;
+              }
+
+              .hotelLocation {
+                color: #444;
+              }
+
+              .hotelDistance {
+                font-size: calc(14 / 1920 * 100vw);
+                margin-top: calc(8 / 1920 * 100vw);
+                color: #999;
+              }
+            }
+
+            .additionInfo {
+              font-size: calc(14 / 1920 * 100vw);
+              color: #999;
+
+              p {
+                padding-top: calc(8 / 1920 * 100vw);
+                display: inline-block;
+                margin-right: calc(10 / 1920 * 100vw);
+              }
+
+              .fullyrefundable::before {
+                content: "\e60d";
+                font-family: 'iconfont';
+                color: #666;
+                font-size: calc(16 / 1920 * 100vw);
+                margin-right: calc(6 / 1920 * 100vw);
+              }
+
+              .freeparking::before {
+                content: "\e860";
+                font-family: 'iconfont';
+                color: #666;
+                font-size: calc(15 / 1920 * 100vw);
+                margin-right: calc(3 / 1920 * 100vw);
+              }
+
+              .swimmingpool::before {
+                content: "\e6d5";
+                font-family: 'iconfont';
+                color: #666;
+                font-size: calc(17 / 1920 * 100vw);
+                vertical-align: middle;
+                margin-right: calc(4 / 1920 * 100vw);
+              }
+
+              .breakfastincluded::before {
+                content: "\e6cd";
+                font-family: 'iconfont';
+                color: #666;
+                font-size: calc(15 / 1920 * 100vw);
+                margin-right: calc(5 / 1920 * 100vw);
+              }
+
+              .fitnessfacilities::before {
+                content: "\e6d9";
+                font-family: 'iconfont';
+                color: #666;
+                font-size: calc(14 / 1920 * 100vw);
+                margin-right: calc(6 / 1920 * 100vw);
+              }
+            }
+          }
+
+          .hotelRight {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: calc(22 / 1920 * 100vw) calc(28 / 1920 * 100vw) calc(20 / 1920 * 100vw) 0px;
+
+            .hotelRating {
+              display: flex;
+
+              .ratingDetails {
+                text-align: right;
+
+                .p1 {
+                  font-size: calc(16 / 1920 * 100vw);
+                  font-weight: 600;
+                  color: #25191a;
+                  margin-bottom: calc(3 / 1920 * 100vw);
+                }
+
+                .p2 {
+                  font-size: calc(14 / 1920 * 100vw);
+                  color: #655e5f;
+                }
+              }
+
+              .ratingValue {
+                background-color: #c25766;
+                height: calc(38 / 1920 * 100vw);
+                width: calc(38 / 1920 * 100vw);
+                line-height: calc(38 / 1920 * 100vw);
+                text-align: center;
+                color: #fff;
+                font-size: calc(16 / 1920 * 100vw);
+                font-weight: 600;
+                border-radius: 50% calc(5 / 1920 * 100vw) 50% 50%;
+                margin-left: calc(14 / 1920 * 100vw);
+              }
+            }
+
+            .book {
+
+              .bookPrice {
+                text-align: right;
+                margin-bottom: calc(10 / 1920 * 100vw);
+
+                .p4,
+                .p5 {
+                  font-size: calc(14 / 1920 * 100vw);
+                  margin-top: calc(4 / 1920 * 100vw);
+                }
+
+                .p3 {
+                  font-size: calc(26 / 1920 * 100vw);
+                  font-weight: 600;
+                  color: #25191a;
+                }
+
+                .p4 {
+                  color: #777;
+                }
+
+                .p5 {
+                  color: #b83b4c;
+                }
+              }
+
+              .bookNow {
+                height: calc(44 / 1920 * 100vw);
+                line-height: calc(44 / 1920 * 100vw);
+                text-align: center;
+                width: calc(204 / 1920 * 100vw);
+                padding-left: calc(8 / 1920 * 100vw);
+                background-color: #251618;
+                border: 0;
+                border-radius: calc(22 / 1920 * 100vw);
+                color: #fff;
+                font-size: calc(16 / 1920 * 100vw);
+                font-weight: 600;
+                cursor: pointer;
+
+                &:hover {
+                  background-color: #3c2a2b;
+                }
+
+                &::after {
+                  content: '\e629';
+                  font-family: 'iconfont';
+                  display: inline-block;
+                  vertical-align: middle;
+                  color: #fff;
+                  font-size: calc(14 / 1920 * 100vw);
+                  margin-left: calc(5 / 1920 * 100vw);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .mapListFooter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: calc(40 / 1920 * 100vw) 0 calc(70 / 1920 * 100vw) 0;
+        font-size: calc(20 / 1920 * 100vw);
+        color: #25191a;
+
+        .prev,
+        .next {
+          height: calc(34 / 1920 * 100vw);
+          width: calc(34 / 1920 * 100vw);
+          border-radius: 50%;
+          cursor: pointer;
+
+          &.disabled {
+            color: #ccc; // 灰色文字
+            cursor: not-allowed; // 禁止手型光标
+
+            &:hover {
+              background-color: transparent; // 禁止悬停效果
+            }
+
+          }
+
+          &:hover {
+            background-color: #f4f2f2;
+          }
+
+          .iconfont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            font-size: calc(16 / 1920 * 100vw);
+            transform: rotate(180deg);
+          }
+        }
+
+        .prev {
+          margin-right: calc(10 / 1920 * 100vw);
+        }
+
+        .next {
+          margin-left: calc(10 / 1920 * 100vw);
+        }
+
+        .next .iconfont {
+          transform: rotate(0deg);
+        }
+
+        .pageNumbers {
+          height: calc(38 / 1920 * 100vw);
+          width: calc(38 / 1920 * 100vw);
+          line-height: calc(38 / 1920 * 100vw);
+          text-align: center;
+          border-radius: 50%;
+          font-size: calc(16 / 1920 * 100vw);
+          margin: 0 calc(10 / 1920 * 100vw);
+          cursor: pointer;
+
+          &:hover {
+            box-shadow: 0 0 0 calc(1.5 / 1920 * 100vw) #25191a inset;
+          }
+
+          &.active {
+            background-color: #25191a;
+            color: #fff;
+          }
+
+        }
+      }
+    }
+  }
+
+  .mapView {
+    position: fixed;
+    top: calc(91 / 1920 * 100vw);
+    right: calc(60 / 1920 * 100vw);
+    width: calc(51.8% - 90 / 1920 * 100vw);
+    height: calc(100vh - 152 / 1920 * 100vw);
+    background-color: #e4dcdd;
+    border-radius: calc(28 / 1920 * 100vw);
+    margin: calc(30 / 1920 * 100vw) 0;
+    overflow: hidden;
+
+    &.fullScreen {
+      top: calc(91 / 1920 * 100vw);
+      right: calc(60 / 1920 * 100vw);
+      width: calc(100% - 120 / 1920 * 100vw);
+      height: calc(100vh - 154 / 1920 * 100vw);
+      z-index: 990;
+    }
+
+    .fullScreenMap,
+    .backList {
+      position: absolute;
+      top: calc(30 / 1920 * 100vw);
+      right: calc(30 / 1920 * 100vw);
+      width: calc(48 / 1920 * 100vw);
+      height: calc(48 / 1920 * 100vw);
+      background-color: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 calc(10 / 1920 * 100vw) rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 500;
+
+      &:hover {
+        background-color: #f5f5f5;
+      }
+
+      .iconfont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        font-weight: 600;
+        color: #25191a;
+
+        &.full {
+          font-size: calc(24 / 1920 * 100vw);
+        }
+
+        &.notFull {
+          font-size: calc(20 / 1920 * 100vw);
+        }
+      }
+    }
+
+    .backList {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      right: calc(108 / 1920 * 100vw);
+      width: calc(180 / 1920 * 100vw);
+      border-radius: calc(24 / 1920 * 100vw);
+
+      h3 {
+        font-size: calc(18 / 1920 * 100vw);
+        color: #25191a;
+        text-align: center;
+        line-height: calc(44 / 1920 * 100vw);
+        font-weight: 500;
+        cursor: pointer;
+
+        &::before {
+          content: '\e626';
+          font-family: 'iconfont';
+          display: inline-block;
+          color: #25191a;
+          font-size: calc(17 / 1920 * 100vw);
+          margin-right: calc(12 / 1920 * 100vw);
+        }
+      }
+    }
+
+    .mapOuter {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+
+      .map {
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        .mapLabelPrice {
+          display: inline-block;
+          height: calc(36 / 1920 * 100vw);
+          line-height: calc(36 / 1920 * 100vw);
+          width: calc(58 / 1920 * 100vw);
+          text-align: center;
+          font-size: calc(17 / 1920 * 100vw);
+          font-weight: 600;
+          border-radius: calc(18 / 1920 * 100vw);
+          background-color: #fff;
+          box-shadow: 0px calc(2 / 1920 * 100vw) calc(5 / 1920 * 100vw) rgba(0, 0, 0, 0.4);
+          color: #25191a;
+          transition: all 0.3s ease;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          &.active {
+            background-color: #25191a;
+            transform: scale(1.1);
+            color: #fff;
+          }
+
+
+        }
+      }
+    }
+  }
+}
+
+// 自定义 Leaflet 弹出框样式
+.leaflet-popup.mapPop .leaflet-popup-content-wrapper {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  width: calc(366 / 1920 * 100vw) !important;
+  height: calc(310 / 1920 * 100vw) !important;
+  border-radius: calc(28 / 1920 * 100vw) !important;
+  padding: calc(14 / 1920 * 100vw) !important;
+  margin: 0 !important;
+  /* 可选，覆盖默认 padding */
+  box-sizing: border-box;
+  box-shadow: 0 0 calc(16 / 1920 * 100vw) rgba(34, 30, 30, 0.3);
+  border: none !important;
+  cursor: pointer;
+
+  .leaflet-popup-content {
+    margin: 0 !important;
+    /* 可选，覆盖默认 margin */
+    padding: 0 !important;
+    /* 可选，覆盖默认 padding */
+    width: 100% !important;
+    height: 100% !important;
+    display: flex;
+    flex-direction: column;
+
+    .popupImage {
+      flex: 0 0 calc(200 / 1920 * 100vw);
+      position: relative;
+      width: 100%;
+      height: calc(200 / 1920 * 100vw);
+      object-fit: cover;
+      border-radius: calc(22 / 1920 * 100vw);
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .popupImageOverlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: calc(66 / 1920 * 100vw);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+        z-index: 1;
+      }
+
+      h5 {
+        position: absolute;
+        bottom: calc(12 / 1920 * 100vw);
+        right: calc(12 / 1920 * 100vw);
+        font-size: calc(15 / 1920 * 100vw);
+        color: #ffffff;
+        font-weight: 400;
+        z-index: 2;
+        opacity: 0.9;
+
+        &::before {
+          content: '\e605';
+          font-family: "iconfont";
+          font-size: calc(16 / 1920 * 100vw);
+          padding-right: calc(8 / 1920 * 100vw);
+        }
+      }
+    }
+
+    .popupTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #25191a;
+      margin-top: calc(18 / 1920 * 100vw);
+
+      .titleLeft {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: 82%;
+
+        h4 {
+          font-size: calc(17 / 1920 * 100vw);
+          font-weight: 600;
+          margin: 0 calc(4 / 1920 * 100vw) 0 calc(10 / 1920 * 100vw);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .iconfont {
+          display: inline-block;
+          font-size: calc(14 / 1920 * 100vw);
+          color: #f2ac0a;
+          margin-left: calc(2 / 1920 * 100vw);
+          margin-top: 0;
+        }
+      }
+
+      .rating {
+        margin-right: calc(10 / 1920 * 100vw);
+        font-size: calc(15 / 1920 * 100vw);
+
+        &::before {
+          content: '\e6ef';
+          font-family: "iconfont";
+          font-size: calc(14 / 1920 * 100vw);
+          padding-right: calc(4 / 1920 * 100vw);
+        }
+      }
+    }
+
+    span {
+      display: inline-block;
+      font-size: calc(22 / 1920 * 100vw);
+      font-weight: 600;
+      color: #25191a;
+      margin-top: calc(8 / 1920 * 100vw);
+      margin-left: calc(10 / 1920 * 100vw);
+    }
+  }
+}
+
+.leaflet-popup-tip {
+  display: none !important;
+}
+
+.leaflet-popup-close-button {
+  display: none !important;
+}

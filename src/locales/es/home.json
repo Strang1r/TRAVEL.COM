@@ -1,0 +1,16 @@
+{
+  "language": {
+    "english": "English",
+    "chinese": "Simplified Chinese",
+    "spanish": "Spanish",
+    "country_en": "United States",
+    "country_cn": "China",
+    "country_es": "Spain"
+  },
+  "welcome": "Hello! Welcome to our site.",
+  "selectLanguage": "Select your language",
+  "button": {
+    "confirm": "Confirm",
+    "cancel": "Cancel"
+  }
+}

@@ -1,0 +1,28 @@
+.searchWrapper {
+  position: relative;
+  height: calc(180 / 1920 * 100vw);
+  overflow: hidden;
+}
+
+.searchWrapper>* {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease, opacity 0.2s ease;
+}
+
+.searchWrapper>*.inactive {
+  transform: translateY(-30%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.searchWrapper>*.active {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
