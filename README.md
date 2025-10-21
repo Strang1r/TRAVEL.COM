@@ -19,6 +19,7 @@ Travel.com is a modern travel booking website built with React + Vite, providing
 
 
 🛠️ Tech Stack
+
 Frontend Framework -- React
 
 Build Tool -- Vite
@@ -46,3 +47,4 @@ npm install
 3 -- Start development server
 
 npm run dev
+
