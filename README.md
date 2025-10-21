@@ -26,11 +26,11 @@ Build Tool -- Vite
 
 State Management -- Redux Toolkit
 
-Styling -- scss
+Styling -- Scss
 
 Map Integration -- Leaflet
 
-Deployment -- Vercel
+UI -- Photoshop
 
 
 🧩 Installation & Setup
@@ -47,4 +47,5 @@ npm install
 3 -- Start development server
 
 npm run dev
+
 
