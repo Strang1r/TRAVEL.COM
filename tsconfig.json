@@ -7,19 +7,29 @@
     "isolatedModules": true,
     "noEmit": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": false
+    "strict": false,
+    "types": [
+      "vite/client"
+    ],
+    "jsx": "react-jsx",
+    "lib": [
+      "ES2020",
+      "DOM"
+    ],
+    "target": "ES2020",
+    "module": "ESNext",
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/types/**/*.d.ts"
-  ],
-  "references": [
+  ]
+  /* "references": [
     {
       "path": "./tsconfig.app.json"
     },
     {
       "path": "./tsconfig.node.json"
     }
-  ]
+  ] */
 }

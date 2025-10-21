@@ -27,7 +27,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "types": [
-      "node"
+      "vite/client"
     ]
   },
   /* "include": [
@@ -35,7 +35,8 @@
     "src"
   ] */
   "include": [
-    "src/**/*",
-    "src/**/*.json"
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/types/**/*.d.ts"
   ]
 }
